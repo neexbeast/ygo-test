@@ -27,5 +27,23 @@ services:
       timeout: 5s
       retries: 5
 
+  server:
+    build: .
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: postgres://postgres:postgres@db:5432/destinations?sslmode=disable
+      REDIS_URL: redis://redis:6379
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
 volumes:
   pgdata:
