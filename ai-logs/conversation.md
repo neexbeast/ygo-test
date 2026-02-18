@@ -137,7 +137,7 @@ Initial build failed with `go.mod requires go >= 1.24.0 (running go 1.22.12)` â€
 ## Prompt 6 â€” 01:40
 
 Add rate limiting to the API and a GitHub Actions CI pipeline that runs lint, tests, and
-enforces the 80% coverage gate on every push.
+enforces the 80% coverage gate no every push.
 
 ## Response 6
 
